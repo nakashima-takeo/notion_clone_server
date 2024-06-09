@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "lint": "eslint src/**/*.{ts,js} --fix"
+    "lint": "eslint src/**/*.{ts,js} --fix",
+    "format": "prettier --write src/**/*.{ts,js}",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
