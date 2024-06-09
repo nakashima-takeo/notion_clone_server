@@ -3,15 +3,16 @@ on:
   push:
     branches:
       - main
-      - cicd
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - uses: actions/checkout@v3
-      - name: Deploy
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cloudflare Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
