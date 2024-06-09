@@ -1,11 +1,9 @@
-import express from "express";
+import { Hono } from "hono";
 
-const app = express();
+const app = new Hono();
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+app.get("/", (c) => {
+  return c.text("Hello Hono!!");
 });
 
-app.listen(5000, () => {
-  console.log("Server is running on http://localhost:5000");
-});
+export default app;

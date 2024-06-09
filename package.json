@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts",
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts",
     "lint": "eslint src/**/*.{ts,js} --fix",
     "format": "prettier --write src/**/*.{ts,js}",
     "prepare": "husky"
@@ -13,9 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "hono": "^4.4.4"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240605.0",
     "@eslint/js": "^9.4.0",
     "@types/express": "^4.17.21",
     "@types/node": "^20.14.2",
